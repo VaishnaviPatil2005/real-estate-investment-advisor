@@ -21,11 +21,11 @@ MODEL_PATH = os.path.join(
     "investment_classifier.joblib"
 )
 
-if not os.path.exists(/content/models/investment_classifier.joblib):
+if not os.path.exists("/content/models/investment_classifier.joblib"):
     st.error("Model file not found in the repository.")
     st.stop()
 
-model = joblib.load(/content/models/investment_classifier.joblib)
+model = joblib.load("/content/models/investment_classifier.joblib")
 
 st.subheader("Enter Property Details")
 
