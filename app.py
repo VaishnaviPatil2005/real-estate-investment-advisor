@@ -12,6 +12,7 @@ st.set_page_config(
 st.title("🏡 Real Estate Investment Advisor")
 st.write("Predict property investment potential using Machine Learning.")
 
+
 import os
 import joblib
 import streamlit as st
@@ -21,11 +22,12 @@ MODEL_PATH = os.path.join(
     "investment_classifier.joblib"
 )
 
-if not os.path.exists("/content/models/investment_classifier.joblib"):
+if not os.path.exists(MODEL_PATH):
     st.error("Model file not found in the repository.")
     st.stop()
 
-model = joblib.load("/content/models/investment_classifier.joblib")
+model = joblib.load(MODEL_PATH)
+
 
 st.subheader("Enter Property Details")
 
