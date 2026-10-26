@@ -12,10 +12,17 @@ st.set_page_config(
 st.title("🏡 Real Estate Investment Advisor")
 st.write("Predict property investment potential using Machine Learning.")
 
-MODEL_PATH = "/content/models/investment_classifier.joblib"
+import os
+import joblib
+import streamlit as st
+
+MODEL_PATH = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "investment_classifier.joblib"
+)
 
 if not os.path.exists(MODEL_PATH):
-    st.error("Model file not found. Please save your trained model first.")
+    st.error("Model file not found in the repository.")
     st.stop()
 
 model = joblib.load(MODEL_PATH)
